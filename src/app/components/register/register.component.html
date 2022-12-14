@@ -1,0 +1,47 @@
+<form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="border p-4 rounded-3">
+  <h3 class="text-primary mb-3">Registration form</h3>
+  <div class="row mb-3">
+    <div class="col form-group">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+      <div class="form-text text-danger" *ngIf="name.errors?.['required'] && name.touched">
+        Nome richiesto
+      </div>
+      <div class="form-text text-danger" *ngIf="name.errors?.['pattern'] && name.touched">
+        Nome non corretto
+      </div>
+    </div>
+    <div class="col form-group">
+      <label for="surname" class="form-label">Surname</label>
+      <input type="text" class="form-control" id="surname" formControlName="surname" required>
+      <div class="form-text text-danger" *ngIf="surname.errors?.['required'] && surname.touched">
+        Cognome richiesto
+      </div>
+      <div class="form-text text-danger" *ngIf="surname.errors?.['pattern'] && surname.touched">
+        Cognome non corretto
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col form-group">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email" required>
+      <div class="form-text text-danger" *ngIf="email.errors?.['required'] && email.touched">
+        Email richiesta
+      </div>
+      <div class="form-text text-danger" *ngIf="email.errors?.['email'] && email.touched">
+        Email non corretta
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col form-group">
+      <label for="pass" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password" required>
+      <div class="form-text text-danger" *ngIf="password.errors?.['required'] && password.touched">
+        Password richiesta
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
+</form>

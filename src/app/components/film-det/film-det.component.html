@@ -1,0 +1,27 @@
+<div class="row">
+<div class="col-md-6">
+  <p>Here are the details of the movie</p>
+<hr>
+
+<h1>{{movie?.title}}</h1>
+<h4>Original title:<mark>{{movie?.original_title}}</mark> </h4>
+<p class="text-secondary">Original language: {{movie?.original_language}}</p>
+<p>Release date: {{movie?.release_date}}</p>
+<br>
+<h5 class="text-danger">Description</h5>
+<p *ngIf="movie?.overview">{{movie?.overview}}</p>
+<p *ngIf="!movie?.overview">Description not provided</p>
+
+<p *ngIf="movie?.adult" class="text-warning bg-dark"> This movie is for an adult public </p>
+<br>
+<p><span class="text-primary">Average vote:</span> {{movie?.vote_average}}</p>
+<br>
+<a class="text-dark text-decoration-none" routerLink="/"><i class="bi bi-backspace-fill"></i> Back to list</a>
+</div>
+<div class="col-md-6 d-flex justify-content-center">
+<img src="https://image.tmdb.org/t/p/w500{{movie?.poster_path}}" class="img-fluid rounded shadow mt-5" width="300px" height="auto" alt="...">
+</div>
+</div>
+
+
+

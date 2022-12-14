@@ -1,0 +1,26 @@
+<form [formGroup]="loginForm" (ngSubmit)="logSubmit()" class="border p-4 rounded-3">
+  <h3 class="text-warning mb-3">Login form</h3>
+  <div class="row mb-3">
+    <div class="col">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+      <div class="form-text text-danger" *ngIf="email.errors?.['required'] && email.touched">
+        Email richiesta
+      </div>
+      <div class="form-text text-danger" *ngIf="email.errors?.['email'] && email.touched">
+        Email non corretta
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <label for="pass" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+      <div class="form-text text-danger" *ngIf="password.errors?.['required'] && password.touched">
+        Password richiesta
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-warning mb-3" [disabled]="loginForm.invalid">Submit</button>
+  <p class="mb-0">Don't have an account? <a routerLink="/register">Register here</a> </p>
+</form>

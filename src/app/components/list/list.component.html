@@ -1,0 +1,23 @@
+<h2>Our movies, your movies</h2>
+<hr>
+
+<div class="d-flex flex-wrap">
+<div class="card text-bg-dark mb-3 me-3" style="max-width: 450px;" *ngFor="let movie of movies">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <p class="card-text">Original title: {{movie.original_title}}</p>
+        <p class="card-text"><small class="text-muted">Original language: {{movie.original_language}}</small></p>
+        <button type="button" class="me-2 btn btn-sm btn-light" (click)="like()"><i class="bi bi-heart-fill text-secondary"></i></button>
+        <button type="button" class="me-2 btn btn-sm btn-light text-secondary" [routerLink]="['/movies/',movie.id]"><i class="bi bi-info-circle-fill text-secondary"></i> Info</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
