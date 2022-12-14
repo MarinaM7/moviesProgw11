@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
       Validators.pattern('[a-zA-Z].*'),
     ]),
     email: new FormControl<string>('', [Validators.required, Validators.email]),
-    password: new FormControl<string>('', [Validators.required]),
+    password: new FormControl<string>('', [Validators.required,  Validators.minLength(4)]),
   });
 
   get name(): FormControl {

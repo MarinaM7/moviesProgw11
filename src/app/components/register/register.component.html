@@ -41,6 +41,9 @@
       <div class="form-text text-danger" *ngIf="password.errors?.['required'] && password.touched">
         Password richiesta
       </div>
+      <div class="form-text text-danger" *ngIf="password.errors?.['minLength'] && email.touched">
+        Password deve essere di almeno 4 caratteri
+      </div>
     </div>
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
