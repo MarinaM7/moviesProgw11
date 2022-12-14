@@ -221,7 +221,7 @@
       "vote_count": 5645
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/6zbKgwgaaCyyBXE4Sun4oWQfQmi.jpg",
       "genre_ids": [
         28,
@@ -260,7 +260,7 @@
       "vote_count": 10
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/3Ef8PWUiP1ehO1ESEroxb736srR.jpg",
       "genre_ids": [
         53,
@@ -486,7 +486,7 @@
       "vote_count": 842
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/5Zv5KmgZzdIvXz2KC3n0MyecSNL.jpg",
       "genre_ids": [
         28,

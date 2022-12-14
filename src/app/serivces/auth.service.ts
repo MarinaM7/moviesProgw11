@@ -39,7 +39,7 @@ export class AuthService {
 
   signIn(user: {email: string, password: string}){
     console.log(user);
-    return this.http.post<AuthResponse>(this.loginUrl, user).pipe(tap(data => {
+    return this.http.post<any>(this.loginUrl, user).pipe(tap(data => {
       console.log(data);
       this.authSubject.next(data);
       localStorage.setItem('user', JSON.stringify(data))

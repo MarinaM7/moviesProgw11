@@ -37,12 +37,9 @@
   <div class="row mb-3">
     <div class="col form-group">
       <label for="pass" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password" formControlName="password" required>
+      <input minlength="4" type="password" class="form-control" id="password" formControlName="password" required placeholder="minimum 4 characters">
       <div class="form-text text-danger" *ngIf="password.errors?.['required'] && password.touched">
         Password richiesta
-      </div>
-      <div class="form-text text-danger" *ngIf="password.errors?.['minLength'] && email.touched">
-        Password deve essere di almeno 4 caratteri
       </div>
     </div>
   </div>

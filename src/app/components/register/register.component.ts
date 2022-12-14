@@ -46,6 +46,6 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.get('email') as FormControl;
   }
   get password(): FormControl {
-    return this.registerForm.get('pass') as FormControl;
+    return this.registerForm.get('password') as FormControl;
   }
 }
