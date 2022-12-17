@@ -29,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: 'logout',
-    component: LogoutComponent
+    component: LogoutComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'movies/:id',

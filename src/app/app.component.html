@@ -11,16 +11,17 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="profile">Profile</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!user">
             <a class="nav-link" routerLink="login">Login</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="user">
             <a class="nav-link" routerLink="logout">Logout</a>
           </li>
         </ul>
       </div>
     </div>
-    <p id="register">Don't have an account? <br> <a routerLink="register">Register here</a></p>
+    <p id="register" *ngIf="!user">Don't have an account? <br> <a routerLink="register">Register here</a></p>
+    <p id="register" *ngIf="user">Hi! welcome {{user.name}}</p>
 
   </nav>
 
